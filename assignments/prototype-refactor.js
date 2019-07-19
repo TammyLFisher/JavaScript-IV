@@ -206,7 +206,7 @@ const willard = new Villian({
   ],
   language: "Jibberish",
   uglyStare: "Wicked Grin",
-  health: 100
+  health: 10
 });
 
 console.log("A new battle is about to begin");
