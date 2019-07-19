@@ -23,7 +23,7 @@ class Person {
         grade(student, subject) {
             return `${student.name} receives a perfect score on ${subject}!`;
         }
-        adjgrade(student) {
+        adjustGrade(student) {
             let points = Math.round(Math.random() * 100);
             if (student.grade >= 100) {
                 student.grade -= points;
@@ -40,11 +40,13 @@ class Person {
             super(studentAttributes);
             this.previousBackground = studentAttributes.previousBackground;
             this.className = studentAttributes.className;
-            this.favSubject = studentAttributes.favSubject;
+            this.favSubjects = studentAttributes.favSubjects;
             this.grade = studentAttributes.grade;
         }
-        listsSubjects() {
-            // const listsSubjects = favSubjects.map(this.listsSubjects);
+        listsSubjects(){
+            this.favSubjects.forEach(function(item){
+            console.log(item);
+        });
         }
         PRAassignment(subject) {
             return `${this.name} has submitted a PR for ${subject}.`;
@@ -158,8 +160,8 @@ const ruth = new ProjectManager({
 });
 
 
- console.log(jacob.speak());
-// console.log(adam.listsSubjects());
+console.log(jacob.speak());
+adam.listsSubjects();
 console.log(jacob.gender);
 console.log(ruth.debugsCode(jacob, "Javascript"));
 console.log(derrick.standUp("webPT8"));
@@ -167,7 +169,7 @@ console.log(lindsey.sprintChallenge("Javascript"));
 console.log(dan.demo("JavaScript"));
 console.log(kieran.grade(lindsey, "CSS"));
 console.log(adam.speak());
-// console.log(jacob.PRAssignment("Responsive Design"));
+console.log(jacob.PRAassignment("Responsive Design"));
 console.log(kieran.catchPhrase);
-// console.log(josh.adjustGrade(jacob));
-console.log(dan.graduate(lindsey));
+console.log(josh.adjustGrade(jacob));
+console.log(lindsey.graduate());
